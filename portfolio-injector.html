@@ -1,0 +1,57 @@
+<div id="roushan-portfolio-root"></div>
+<script>
+(function() {
+    // 1. Inject Tailwind
+    if (!document.getElementById('tailwind-script')) {
+        var twScript = document.createElement('script');
+        twScript.id = 'tailwind-script';
+        twScript.src = 'https://cdn.tailwindcss.com';
+        document.head.appendChild(twScript);
+        
+        twScript.onload = function() {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            dark: '#0a0a0a',
+                            card: '#111111',
+                            border: '#222222',
+                            accent: '#14b8a6', 
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                        }
+                    }
+                }
+            };
+        };
+    }
+
+    // 2. Inject Google Fonts
+    if (!document.getElementById('inter-font')) {
+        var fontLink = document.createElement('link');
+        fontLink.id = 'inter-font';
+        fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap';
+        fontLink.rel = 'stylesheet';
+        document.head.appendChild(fontLink);
+    }
+
+    // 3. Inject Custom CSS
+    if (!document.getElementById('portfolio-custom-css')) {
+        var style = document.createElement('style');
+        style.id = 'portfolio-custom-css';
+        style.innerHTML = \
+            #roushan-portfolio-root { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
+            #roushan-portfolio-root .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+            #roushan-portfolio-root .gradient-text { background: linear-gradient(to right, #ffffff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            #roushan-portfolio-root .accent-gradient-text { background: linear-gradient(to right, #2dd4bf, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            #roushan-portfolio-root .card-hover:hover { transform: translateY(-4px); border-color: #14b8a6; box-shadow: 0 10px 40px -10px rgba(20, 184, 166, 0.15); }
+        \;
+        document.head.appendChild(style);
+    }
+
+    // 4. Inject HTML Content
+    var content = \$bodyHtml\;
+    document.getElementById('roushan-portfolio-root').innerHTML = content;
+})();
+</script>
