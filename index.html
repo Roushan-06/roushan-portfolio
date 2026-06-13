@@ -1,586 +1,1063 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roushan Kumar - Performance Marketing & Operations Specialist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#0a0a0a',
-                        card: '#111111',
-                        border: '#222222',
-                        accent: '#14b8a6', // Teal-500 for a premium SaaS look
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roushan | Premium Portfolio</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
-        .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .gradient-text { background: linear-gradient(to right, #ffffff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .accent-gradient-text { background: linear-gradient(to right, #2dd4bf, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-4px); border-color: #14b8a6; box-shadow: 0 10px 40px -10px rgba(20, 184, 166, 0.15); }
+      :root {
+        --ink: #090b0f;
+        --panel: #11151d;
+        --panel-soft: #171c26;
+        --ivory: #f5efe4;
+        --white: #ffffff;
+        --muted: rgba(255, 255, 255, 0.66);
+        --muted-dark: #5f594f;
+        --gold: #d5b46c;
+        --gold-dark: #97793d;
+        --teal: #2ec4b6;
+        --line: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--ivory);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(100% - 40px, 1240px);
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--line);
+        background: rgba(9, 11, 15, 0.82);
+        backdrop-filter: blur(22px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        min-height: 72px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid rgba(213, 180, 108, 0.4);
+        border-radius: 8px;
+        background: var(--gold);
+        color: #171008;
+        font-weight: 900;
+        box-shadow: 0 0 38px rgba(213, 180, 108, 0.28);
+      }
+
+      .brand-name {
+        display: block;
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .brand-role {
+        display: block;
+        margin-top: 2px;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .nav-links a {
+        border-radius: 6px;
+        padding: 9px 12px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 12px;
+        font-weight: 750;
+        text-transform: uppercase;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 8px;
+        padding: 12px 18px;
+        border: 1px solid transparent;
+        font-size: 13px;
+        font-weight: 850;
+        text-transform: uppercase;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.gold {
+        border-color: rgba(213, 180, 108, 0.4);
+        background: var(--gold);
+        color: #120d08;
+        box-shadow: 0 16px 50px rgba(213, 180, 108, 0.18);
+      }
+
+      .button.light {
+        background: var(--white);
+        color: #080a0e;
+      }
+
+      .button.dark {
+        background: #111318;
+        color: var(--white);
+      }
+
+      .button.outline-light {
+        border-color: rgba(255, 255, 255, 0.18);
+        color: var(--white);
+      }
+
+      .button.outline-dark {
+        border-color: rgba(17, 19, 24, 0.15);
+        color: #111318;
+      }
+
+      .hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        padding-top: 92px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background-image: url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85");
+        background-position: center;
+        background-size: cover;
+        opacity: 0.35;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(90deg, rgba(9, 11, 15, 0.98) 0%, rgba(9, 11, 15, 0.88) 43%, rgba(9, 11, 15, 0.5) 100%);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+        align-items: end;
+        gap: 56px;
+        min-height: calc(100vh - 92px);
+        padding-bottom: 42px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        margin: 0 0 20px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 9px 12px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 820px;
+        color: var(--white);
+        font-size: clamp(64px, 10vw, 124px);
+        line-height: 0.92;
+        font-weight: 950;
+      }
+
+      .hero-lede {
+        max-width: 780px;
+        margin-top: 28px;
+        color: var(--ivory);
+        font-size: clamp(21px, 2.1vw, 28px);
+        line-height: 1.45;
+        font-weight: 700;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+        margin-top: 22px;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .capability-card,
+      .gold-card,
+      .summary-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(16, 20, 29, 0.9);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(16px);
+      }
+
+      .capability-card {
+        padding: 20px;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      .micro {
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .status {
+        border-radius: 6px;
+        background: rgba(46, 196, 182, 0.15);
+        padding: 6px 10px;
+        color: #8ff5eb;
+        font-size: 10px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .steps {
+        display: grid;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.045);
+        padding: 16px;
+      }
+
+      .step-number {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 1px solid rgba(213, 180, 108, 0.35);
+        border-radius: 6px;
+        background: rgba(213, 180, 108, 0.1);
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 950;
+      }
+
+      .step strong {
+        display: block;
+        color: var(--white);
+        font-size: 14px;
+      }
+
+      .step span {
+        display: block;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.54);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.055);
+        padding: 16px;
+        text-align: center;
+        backdrop-filter: blur(16px);
+      }
+
+      .stat strong {
+        display: block;
+        color: var(--white);
+        font-size: 28px;
+        font-weight: 950;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.42);
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .section {
+        border-bottom: 1px solid var(--line);
+        padding: 80px 0;
+      }
+
+      .ivory {
+        background: var(--ivory);
+        color: #111318;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 52px;
+      }
+
+      .section-label {
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .ivory .section-label {
+        color: var(--gold-dark);
+      }
+
+      h2 {
+        margin-top: 16px;
+        font-size: clamp(38px, 5vw, 60px);
+        line-height: 1.08;
+        font-weight: 950;
+      }
+
+      .large-copy {
+        color: #34312b;
+        font-size: 21px;
+        line-height: 1.72;
+      }
+
+      .body-copy {
+        margin-top: 22px;
+        color: var(--muted-dark);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .highlight-band {
+        border-bottom: 1px solid var(--line);
+        background: #0e1118;
+        padding: 32px 0;
+      }
+
+      .highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      .highlight,
+      .skill,
+      .work-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.045);
+        padding: 22px;
+      }
+
+      .highlight small,
+      .skill small,
+      .gold-card small,
+      .summary-card small {
+        display: block;
+        color: var(--gold);
+        font-size: 10px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .highlight p {
+        margin-top: 12px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+
+      .section-head p {
+        max-width: 390px;
+        color: rgba(255, 255, 255, 0.52);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .skill {
+        background: var(--panel);
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .skill:hover {
+        transform: translateY(-4px);
+        border-color: rgba(213, 180, 108, 0.45);
+        background: var(--panel-soft);
+      }
+
+      .skill small {
+        color: var(--teal);
+      }
+
+      .skill h3,
+      .work-card h3 {
+        margin-top: 10px;
+        color: var(--white);
+        font-size: 24px;
+        line-height: 1.18;
+        font-weight: 950;
+      }
+
+      .skill ul {
+        display: grid;
+        gap: 12px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .skill li {
+        position: relative;
+        padding-left: 18px;
+        color: rgba(255, 255, 255, 0.64);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .skill li::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 99px;
+        background: var(--gold);
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .tool {
+        border: 1px solid rgba(17, 19, 24, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 14px 16px;
+        color: #2c2b27;
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 10px 35px rgba(17, 19, 24, 0.05);
+      }
+
+      .work-top {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 52px;
+        align-items: start;
+      }
+
+      .gold-card {
+        border-color: rgba(213, 180, 108, 0.25);
+        background: #15120b;
+        padding: 24px;
+      }
+
+      .case-study-feature {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 28px;
+        align-items: center;
+        margin-top: 18px;
+        border: 1px solid rgba(46, 196, 182, 0.28);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(17, 21, 29, 0.95), rgba(13, 39, 39, 0.72));
+        padding: 26px;
+        box-shadow: 0 26px 80px rgba(0, 0, 0, 0.28);
+      }
+
+      .case-study-feature small {
+        display: block;
+        color: var(--teal);
+        font-size: 10px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .case-study-feature h3 {
+        margin-top: 10px;
+        color: var(--white);
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.08;
+        font-weight: 950;
+      }
+
+      .case-study-feature p {
+        color: rgba(255, 255, 255, 0.66);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .case-study-feature .actions {
+        margin-top: 22px;
+      }
+
+      .site-grid,
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .site,
+      .profile-item {
+        border: 1px solid rgba(213, 180, 108, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.045);
+        padding: 16px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .work-card {
+        background: var(--panel);
+      }
+
+      .work-card p {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .summary-card {
+        border-color: rgba(17, 19, 24, 0.1);
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 24px 80px rgba(17, 19, 24, 0.08);
+        padding: 24px;
+      }
+
+      .summary-card small {
+        color: var(--gold-dark);
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-item {
+        border-color: rgba(17, 19, 24, 0.1);
+        background: var(--ivory);
+        color: #34312b;
+      }
+
+      .details {
+        margin-top: 24px;
+        border-top: 1px solid rgba(17, 19, 24, 0.1);
+        padding-top: 24px;
+        color: var(--muted-dark);
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      @media (max-width: 980px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-grid,
+        .section-grid,
+        .work-top {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          min-height: auto;
+          padding-top: 70px;
+        }
+
+        .highlight-grid,
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .case-study-feature {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 28px, 1240px);
+        }
+
+        .brand-role,
+        .topbar .button {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 74px;
+        }
+
+        h1 {
+          font-size: 64px;
+        }
+
+        .hero-lede {
+          font-size: 20px;
+        }
+
+        .section,
+        .highlight-band {
+          padding: 58px 0;
+        }
+
+        .highlight-grid,
+        .skills-grid,
+        .tools-grid,
+        .work-grid,
+        .site-grid,
+        .case-study-feature {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          display: block;
+        }
+
+        .section-head p {
+          margin-top: 20px;
+        }
+      }
     </style>
-</head>
-<body class="antialiased selection:bg-accent selection:text-dark">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark">R</span>
+          <span>
+            <span class="brand-name">ROUSHAN</span>
+            <span class="brand-role">Marketing Operator</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#tools">Tools</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="button gold" href="mailto:raushansingh0610@gmail.com">Hire Me</a>
+      </div>
+    </header>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-tighter text-white">Roushan<span class="text-accent">.</span></a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
-            </div>
-            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-dark bg-white rounded-full hover:bg-gray-200 transition-colors">Let's Talk</a>
-        </div>
-    </nav>
-
-    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24">
-        
-        <!-- 1. Hero Section -->
-        <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center text-center py-20 relative">
-            <!-- Subtle background glow -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-accent/5 blur-[120px] rounded-full pointer-events-none"></div>
-
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card text-xs font-medium text-gray-300 mb-8 border border-border shadow-sm z-10">
-                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                Available for new opportunities
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white leading-[1.1] z-10">
-                Hi, I’m <span class="gradient-text">Roushan Kumar</span>
-            </h1>
-            
-            <h2 class="text-lg md:text-2xl font-medium text-gray-400 mb-8 max-w-4xl leading-snug z-10">
-                <span class="accent-gradient-text">Performance Marketing Operations</span> | Funnel Automation | CRM Workflow Specialist
-            </h2>
-            
-            <p class="text-base md:text-lg text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed z-10">
-                I build marketing funnels, CRM systems, and automation workflows that help teams improve lead quality, reduce funnel leakage, speed up follow-ups, and manage leads more clearly from enquiry to conversion.
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Performance Marketing / Funnels / Ops</p>
+            <h1>Roushan</h1>
+            <p class="hero-lede">
+              A premium execution partner for founder-led marketing teams: funnels, websites,
+              automations, creative production, reporting, and campaign operations.
             </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-20 z-10">
-                <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-teal-400 text-dark font-semibold rounded-full transition-all text-center">
-                    View My Work
-                </a>
-                <a href="#" class="w-full sm:w-auto px-8 py-3.5 bg-card hover:bg-border text-white border border-border font-medium rounded-full transition-all text-center">
-                    Download Resume
-                </a>
-                <a href="https://www.linkedin.com/in/roushan-kumar-b2bb492ba/" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-card text-white border border-border font-medium rounded-full transition-all text-center">
-                    Connect on LinkedIn
-                </a>
+            <p class="hero-copy">
+              I work across the pieces that usually get split between multiple people: campaign
+              execution, funnel building, backend systems, ad creative, client coordination, and
+              AI-assisted production.
+            </p>
+            <div class="actions">
+              <a class="button light" href="#work">View Work</a>
+              <a class="button outline-light" href="#contact">Contact</a>
             </div>
+          </div>
 
-            <!-- Credibility Points -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-5xl border-t border-border pt-12 z-10">
-                <div class="flex flex-col items-center text-center">
-                    <span class="text-3xl font-bold text-white mb-2">2+</span>
-                    <span class="text-xs text-gray-500 uppercase tracking-widest font-medium">Years Experience</span>
+          <div>
+            <div class="capability-card">
+              <div class="card-header">
+                <p class="micro">Capability System</p>
+                <p class="status">Active</p>
+              </div>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-number">01</span>
+                  <span><strong>Campaign Planning</strong><span>Assets, briefs, tracking</span></span>
                 </div>
-                <div class="flex flex-col items-center text-center">
-                    <span class="text-3xl font-bold text-white mb-2">50+</span>
-                    <span class="text-xs text-gray-500 uppercase tracking-widest font-medium">Client Projects</span>
+                <div class="step">
+                  <span class="step-number">02</span>
+                  <span><strong>Funnel Buildout</strong><span>Pages, forms, booking flows</span></span>
                 </div>
-                <div class="flex flex-col items-center text-center">
-                    <span class="text-3xl font-bold text-white mb-2">Systems</span>
-                    <span class="text-xs text-gray-500 uppercase tracking-widest font-medium">Funnel + CRM + Automation</span>
+                <div class="step">
+                  <span class="step-number">03</span>
+                  <span><strong>Automation Logic</strong><span>Routing, tagging, reports</span></span>
                 </div>
-                <div class="flex flex-col items-center text-center">
-                    <span class="text-3xl font-bold text-white mb-2">Stack</span>
-                    <span class="text-xs text-gray-500 uppercase tracking-widest font-medium">GHL, n8n, WhatsApp</span>
+                <div class="step">
+                  <span class="step-number">04</span>
+                  <span><strong>Creative Iteration</strong><span>Static, video, AI workflows</span></span>
                 </div>
+              </div>
             </div>
-        </section>
-
-        <!-- 2. About Section -->
-        <section id="about" class="py-24 border-t border-border">
-            <div class="grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
-                <div>
-                    <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">About Me</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">Engineering the systems behind the marketing.</h2>
-                    <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
-                        <p>I work across performance marketing operations, funnel strategy, CRM automation, lead qualification systems, and campaign execution. My work sits precisely at the intersection of marketing, automation, and operations.</p>
-                        
-                        <div class="p-6 bg-card border border-border rounded-2xl my-8">
-                            <p class="text-sm font-semibold text-white mb-3 uppercase tracking-wider">The Full Funnel Journey</p>
-                            <p class="text-accent font-medium text-sm sm:text-base flex flex-wrap gap-2 items-center">
-                                Ad <span class="text-gray-600">→</span> Landing Page <span class="text-gray-600">→</span> Lead Capture <span class="text-gray-600">→</span> Qualification <span class="text-gray-600">→</span> CRM Pipeline <span class="text-gray-600">→</span> Follow-Up <span class="text-gray-600">→</span> Sales Team <span class="text-gray-600">→</span> Conversion
-                            </p>
-                        </div>
-
-                        <p>My core strength is finding exactly where a funnel is leaking and building the systems to fix it. I keep the tone professional, direct, and confident, focusing purely on what drives revenue and operational clarity.</p>
-                    </div>
-                </div>
-                <div class="relative rounded-3xl overflow-hidden bg-card border border-border aspect-[4/5] flex items-center justify-center shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-border to-card opacity-50"></div>
-                    <div class="text-center z-10 p-8">
-                        <div class="w-20 h-20 bg-border rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                        </div>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest font-medium">[Image Placeholder]</p>
-                    </div>
-                </div>
+            <div class="stats" aria-label="Portfolio statistics">
+              <div class="stat"><strong>2+</strong><span>Years</span></div>
+              <div class="stat"><strong>18+</strong><span>Tools</span></div>
+              <div class="stat"><strong>4</strong><span>Websites</span></div>
             </div>
-        </section>
-
-        <!-- 3. What I Do Section -->
-        <section id="services" class="py-24 border-t border-border">
-            <div class="mb-16">
-                <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">What I Do</h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Systems that scale conversions.</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Funnel Strategy</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Planning full funnel journeys from ad click to lead capture, qualification, CRM tracking, follow-up, and sales conversion.</p>
-                </div>
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">CRM Automation</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Building CRM pipelines, stages, tags, workflows, calendars, forms, and tracking systems tailored to your sales process.</p>
-                </div>
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v8l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">GHL & n8n Workflows</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Creating automation workflows, webhook integrations, and connecting CRMs, landing pages, WhatsApp, email, SMS, and Zoom.</p>
-                </div>
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Lead Qualification Systems</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Creating intelligent systems that reduce junk enquiries and help sales teams focus their time strictly on serious leads.</p>
-                </div>
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Webinar Funnels</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Managing registration flows, reminders, WhatsApp group movement, attendance tracking, and post-webinar follow-ups.</p>
-                </div>
-                
-                <div class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 card-hover">
-                    <div class="w-12 h-12 bg-border rounded-xl flex items-center justify-center mb-6 border border-gray-800">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Campaign Problem-Solving</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Finding gaps in campaigns, funnels, creatives, tracking, CRM processes, and executing the operational fix.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Experience Section -->
-        <section id="experience" class="py-24 border-t border-border">
-            <div class="mb-16">
-                <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Experience</h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Career Timeline.</h2>
-            </div>
-            
-            <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-border">
-                
-                <!-- Timeline Item 1 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-dark bg-border group-hover:bg-accent transition-colors shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-card border border-border p-8 rounded-2xl">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
-                            <h3 class="font-bold text-white text-xl">Growth Strategist</h3>
-                            <span class="text-xs font-semibold text-accent bg-accent/10 border border-accent/20 px-3 py-1 rounded-full whitespace-nowrap">Jan 2025 – Present</span>
-                        </div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-6">GrowthifyU • Bengaluru South, Karnataka, India</h4>
-                        <ul class="text-sm text-gray-400 space-y-3 list-disc list-outside ml-4 marker:text-gray-700">
-                            <li>Build and optimize lead generation funnels for clients across solar, interior design, coaching, education, CRM, local services, and B2B industries.</li>
-                            <li>Plan funnel journeys from ads to landing pages, lead capture, qualification, CRM pipeline, follow-up, sales handoff, and conversion.</li>
-                            <li>Build GHL workflows, CRM pipelines, forms, tags, stages, automations, calendars, and follow-up systems.</li>
-                            <li>Create n8n workflows and webhook integrations to connect landing pages, CRMs, WhatsApp, email, SMS, Zoom, and other tools.</li>
-                            <li>Support webinar funnels, lead qualification systems, campaign coordination, and client communication.</li>
-                            <li>Help teams solve funnel, CRM, automation, tracking, and execution-related problems.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-dark bg-border group-hover:bg-accent transition-colors shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-card border border-border p-8 rounded-2xl">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
-                            <h3 class="font-bold text-white text-xl">Creative Head</h3>
-                            <span class="text-xs font-semibold text-gray-400 bg-border px-3 py-1 rounded-full whitespace-nowrap">Jan 2024 – Mar 2025</span>
-                        </div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-6">GrowthifyU • Bengaluru, Karnataka, India</h4>
-                        <ul class="text-sm text-gray-400 space-y-3 list-disc list-outside ml-4 marker:text-gray-700">
-                            <li>Planned and executed performance-focused ad creatives, campaign assets, landing page content, social media content, and video assets.</li>
-                            <li>Developed creative angles, hooks, ad messaging, and campaign communication for multiple client industries.</li>
-                            <li>Worked with media buying and strategy teams to align creatives with campaign goals and audience pain points.</li>
-                            <li>Supported creative testing, visual direction, messaging, and video editing.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-dark bg-border group-hover:bg-accent transition-colors shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-card border border-border p-8 rounded-2xl">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
-                            <h3 class="font-bold text-white text-xl">Social Media Strategist</h3>
-                            <span class="text-xs font-semibold text-gray-400 bg-border px-3 py-1 rounded-full whitespace-nowrap">Sep 2022 – Nov 2024</span>
-                        </div>
-                        <h4 class="text-sm font-medium text-gray-500 mb-6">Webspherx | Crico Akash • Remote</h4>
-                        <ul class="text-sm text-gray-400 space-y-3 list-disc list-outside ml-4 marker:text-gray-700">
-                            <li>Planned social media content, campaign ideas, and digital communication strategies.</li>
-                            <li>Supported content creation, creative execution, design work, and video editing.</li>
-                            <li>Helped improve brand communication through social media content and visual storytelling.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 5. Featured Projects Section -->
-        <section id="projects" class="py-24 border-t border-border">
-            <div class="mb-16">
-                <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Case Studies</h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects.</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-card border border-border rounded-2xl flex flex-col transition-all duration-300 card-hover p-8">
-                    <span class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">Solar / Renewable Energy</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">Solar Lead Qualification Funnel</h3>
-                    
-                    <div class="space-y-5 mb-8 grow">
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Problem</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">The client was receiving low-quality enquiries and accidental form submissions.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Solution</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">Built a structured qualification funnel with CRM integration and follow-up automation to help filter serious prospects before sales follow-up.</p>
-                        </div>
-                        <div class="bg-border/30 p-4 rounded-xl border border-border/50">
-                            <h4 class="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-2">Result</h4>
-                            <p class="text-sm text-white font-medium leading-relaxed">Improved lead quality, reduced irrelevant enquiries, and created a clearer sales follow-up process.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-6 border-t border-gray-800/60 mt-auto">
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Landing Page</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">CRM</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Webhooks</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">WhatsApp</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Email/SMS</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors">
-                            View Project
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-card border border-border rounded-2xl flex flex-col transition-all duration-300 card-hover p-8">
-                    <span class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">Interior Design</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">Interior Design Budget Funnel</h3>
-                    
-                    <div class="space-y-5 mb-8 grow">
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Problem</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">The business needed better lead qualification before sales calls.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Solution</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">Built a budget-based qualification funnel to help identify serious prospects and improve enquiry quality.</p>
-                        </div>
-                        <div class="bg-border/30 p-4 rounded-xl border border-border/50">
-                            <h4 class="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-2">Result</h4>
-                            <p class="text-sm text-white font-medium leading-relaxed">Better lead handling, clearer follow-up, and improved sales visibility.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-6 border-t border-gray-800/60 mt-auto">
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Landing Page</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Lead Form</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">CRM</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Automations</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors">
-                            View Project
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-card border border-border rounded-2xl flex flex-col transition-all duration-300 card-hover p-8">
-                    <span class="text-xs font-bold text-accent uppercase tracking-wider mb-3 block">CRM / SaaS / Interior</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">CRM / Webinar Funnel System</h3>
-                    
-                    <div class="space-y-5 mb-8 grow">
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Problem</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">The business needed a structured, reliable webinar acquisition system.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Solution</h4>
-                            <p class="text-sm text-gray-400 leading-relaxed">Built webinar registration, qualification, WhatsApp group movement, Zoom attendance tracking, CRM pipeline, and post-webinar follow-up systems.</p>
-                        </div>
-                        <div class="bg-border/30 p-4 rounded-xl border border-border/50">
-                            <h4 class="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-2">Result</h4>
-                            <p class="text-sm text-white font-medium leading-relaxed">Better lead tracking from registration to attendance, follow-up, and sales conversion.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-6 border-t border-gray-800/60 mt-auto">
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">CRM</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">Zoom</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">n8n</span>
-                            <span class="px-2.5 py-1 text-[11px] bg-border text-gray-300 rounded-md font-medium">WhatsApp</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors">
-                            View Project
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-border hover:border-gray-500 text-gray-400 hover:text-white rounded-full text-sm font-medium transition-colors border-dashed">
-                    + Add More Case Studies (Placeholder)
-                </a>
-            </div>
-        </section>
-
-        <!-- 6 & 7. Tools & Skills -->
-        <section id="tools" class="py-24 border-t border-border">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Skills Section -->
-                <div>
-                    <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Expertise</h3>
-                    <h2 class="text-3xl font-bold text-white mb-8">Skill Stack</h2>
-                    <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Funnel Strategy</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Marketing Operations</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">CRM Automation</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">GoHighLevel Workflows</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">n8n Workflow Automation</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Lead Qualification Systems</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Webhook Integrations</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">WhatsApp Automation</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Email & SMS Follow-Up</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Webinar Funnel Management</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Landing Page Strategy</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Lead Nurturing</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Campaign Coordination</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Client Communication</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Creative Testing</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Funnel Problem-Solving</span>
-                        <span class="px-3 py-1.5 bg-card border border-border text-gray-300 rounded-md text-sm hover:border-gray-500 transition-colors">Video Editing</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Platforms Section -->
-                <div>
-                    <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Tech Stack</h3>
-                    <h2 class="text-3xl font-bold text-white mb-8">Tools & Platforms</h2>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">GoHighLevel</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">n8n</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">CRM Platforms</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">WhatsApp Automation Tools</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">AI Sensy & Wisemelon</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">Landing Page Builders</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">Meta Ads & Google Ads</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">ChatGPT</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">Webhook Tools</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                            <span class="text-sm font-medium text-gray-300">Zoom</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">Canva</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-3 bg-card border border-border rounded-lg">
-                            <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
-                            <span class="text-sm font-medium text-gray-300">Video Editing Tools</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. Portfolio / Work Gallery Section -->
-        <section id="portfolio" class="py-24 border-t border-border">
-            <div class="mb-12">
-                <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-4">Gallery</h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Visual Portfolio.</h2>
-                <p class="text-gray-400 mt-4 max-w-2xl text-lg">A flexible gallery for landing pages, workflow screenshots, CRM pipelines, ad creatives, video samples, and Loom walkthroughs.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Gallery Item Placeholders -->
-                <div class="group relative aspect-video bg-card border border-border rounded-xl overflow-hidden cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-700">
-                        <span class="text-sm font-medium">Landing Page Screenshot</span>
-                    </div>
-                    <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <span class="text-[10px] text-accent font-bold uppercase tracking-wider mb-2">Category</span>
-                        <h4 class="text-white font-semibold text-sm mb-1">Project Title</h4>
-                        <p class="text-gray-400 text-xs mb-4">Short description of the work done.</p>
-                        <a href="#" class="px-4 py-1.5 bg-white text-dark text-xs font-bold rounded-full">View Link</a>
-                    </div>
-                </div>
-
-                <div class="group relative aspect-video bg-card border border-border rounded-xl overflow-hidden cursor-pointer">
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-700">
-                        <span class="text-sm font-medium">n8n Workflow Diagram</span>
-                    </div>
-                    <div class="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <span class="text-[10px] text-accent font-bold uppercase tracking-wider mb-2">Automation</span>
-                        <h4 class="text-white font-semibold text-sm mb-1">Webinar Integration</h4>
-                        <p class="text-gray-400 text-xs mb-4">Zoom to CRM logic via Webhooks.</p>
-                        <a href="#" class="px-4 py-1.5 bg-white text-dark text-xs font-bold rounded-full">View Link</a>
-                    </div>
-                </div>
-
-                <div class="group relative aspect-video bg-card border border-border rounded-xl overflow-hidden cursor-pointer border-dashed flex flex-col items-center justify-center text-gray-600 hover:text-white hover:border-gray-500 transition-colors">
-                    <svg class="w-5 h-5 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                    <span class="text-xs font-medium uppercase tracking-wider">Add Item Later</span>
-                </div>
-                
-                <div class="group relative aspect-video bg-card border border-border rounded-xl overflow-hidden cursor-pointer border-dashed flex flex-col items-center justify-center text-gray-600 hover:text-white hover:border-gray-500 transition-colors">
-                    <svg class="w-5 h-5 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                    <span class="text-xs font-medium uppercase tracking-wider">Add Item Later</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. Education Section -->
-        <section id="education" class="py-24 border-t border-border">
-            <h3 class="text-sm font-semibold text-accent uppercase tracking-widest mb-8">Education & Learning</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-card border border-border p-8 rounded-2xl">
-                    <h4 class="text-xl font-bold text-white mb-2">Bachelor of Computer Applications (BCA)</h4>
-                    <p class="text-sm font-medium text-gray-500 mb-4">2023 – 2026</p>
-                </div>
-                <div class="bg-card border border-border p-8 rounded-2xl">
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <h4 class="text-xl font-bold text-white mb-2">AI & Machine Learning Course</h4>
-                            <p class="text-sm font-medium text-gray-400">IIT Patna</p>
-                        </div>
-                        <span class="text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-full">Enrolled</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. Contact Section -->
-        <section id="contact" class="py-24 border-t border-border">
-            <div class="bg-card border border-border rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden shadow-2xl">
-                <!-- Background decoration -->
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-accent/10 blur-[100px] rounded-full pointer-events-none"></div>
-                
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Let’s Connect</h2>
-                    <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        I’m open to roles and opportunities where I can support funnel operations, CRM automation, marketing workflows, and performance marketing execution.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                        <a href="mailto:roushansingh0610@gmail.com" class="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-teal-400 text-dark font-bold rounded-full transition-all text-center">
-                            Email Me
-                        </a>
-                        <a href="https://www.linkedin.com/in/roushan-kumar-b2bb492ba/" target="_blank" class="w-full sm:w-auto px-8 py-3.5 bg-card hover:bg-border border border-border text-white font-bold rounded-full transition-all text-center">
-                            LinkedIn
-                        </a>
-                        <a href="#" class="w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-white/5 border border-border text-white font-bold rounded-full transition-all text-center border-dashed">
-                            Download Resume
-                        </a>
-                    </div>
-                    <div class="text-sm text-gray-500 mt-8">
-                        <p>Email: <a href="mailto:roushansingh0610@gmail.com" class="text-gray-300 hover:text-white transition-colors">roushansingh0610@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 11. Footer -->
-    <footer class="border-t border-border bg-[#050505] py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <p class="text-white font-bold text-lg mb-1">Roushan Kumar</p>
-                <p class="text-gray-500 text-sm">Performance Marketing Operations | Funnel Automation | CRM Workflow Specialist</p>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-400">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#tools" class="hover:text-white transition-colors">Tools</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-                <a href="https://www.linkedin.com/in/roushan-kumar-b2bb492ba/" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
-            </div>
+          </div>
         </div>
-    </footer>
+      </section>
 
-</body>
+      <section class="section ivory" id="about">
+        <div class="container section-grid">
+          <div>
+            <p class="section-label">About</p>
+            <h2>One operator across the full marketing delivery chain.</h2>
+          </div>
+          <div>
+            <p class="large-copy">
+              I do not work in one narrow lane. I handle client coordination, campaign execution,
+              funnel building, automation, landing pages, ad creative direction, video editing,
+              reporting, and operational follow-through.
+            </p>
+            <p class="body-copy">
+              The value I bring is range backed by execution. I can help a founder-led team move
+              from idea to page to workflow to report without losing momentum between departments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlight-band">
+        <div class="container highlight-grid">
+          <div class="highlight">
+            <small>Current Focus</small>
+            <p>Performance marketing, operations, funnels, and execution systems</p>
+          </div>
+          <div class="highlight">
+            <small>Build Capability</small>
+            <p>Websites and landing pages built from scratch without a separate developer</p>
+          </div>
+          <div class="highlight">
+            <small>Experience</small>
+            <p>2+ years inside fast performance marketing environments</p>
+          </div>
+          <div class="highlight">
+            <small>Environment</small>
+            <p>Founder-led teams, agency-side delivery, and practical marketing operations</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Skill Areas</p>
+              <h2>Premium execution across creative, systems, and operations.</h2>
+            </div>
+            <p>
+              Built for teams that need someone who can move through strategy, production,
+              backend setup, and delivery control.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill">
+              <small>Campaign Systems</small>
+              <h3>Creative + Ops</h3>
+              <ul>
+                <li>Campaign asset planning</li>
+                <li>Client coordination and follow-through</li>
+                <li>Cross-functional execution management</li>
+                <li>Creative briefing and delivery alignment</li>
+              </ul>
+            </article>
+            <article class="skill">
+              <small>Conversion Flow</small>
+              <h3>Funnels + GHL</h3>
+              <ul>
+                <li>GoHighLevel funnel setup</li>
+                <li>Landing page and website building</li>
+                <li>Lead routing, tagging, and pipeline logic</li>
+                <li>Automation mapping and backend flow setup</li>
+              </ul>
+            </article>
+            <article class="skill">
+              <small>Delivery Engine</small>
+              <h3>Marketing Ops</h3>
+              <ul>
+                <li>n8n workflow design</li>
+                <li>Reporting systems and dashboards</li>
+                <li>Campaign operations tracking</li>
+                <li>ClickUp and Monday.com execution management</li>
+              </ul>
+            </article>
+            <article class="skill">
+              <small>Ad Production</small>
+              <h3>Performance Creative</h3>
+              <ul>
+                <li>Meta ad creative direction</li>
+                <li>Video ad editing in Premiere Pro and CapCut</li>
+                <li>Static creative production in Canva</li>
+                <li>Creative iteration based on performance feedback</li>
+              </ul>
+            </article>
+            <article class="skill">
+              <small>Project Control</small>
+              <h3>Agency Execution</h3>
+              <ul>
+                <li>Managing multi-project execution</li>
+                <li>Bridging strategy and implementation</li>
+                <li>Handling delivery across functions</li>
+                <li>Keeping campaigns and operations moving without chaos</li>
+              </ul>
+            </article>
+            <article class="skill">
+              <small>Marketing Side</small>
+              <h3>Founder's Office</h3>
+              <ul>
+                <li>Executing priority founder-led marketing projects</li>
+                <li>Turning ideas into systems and deliverables</li>
+                <li>Supporting fast launches across channels</li>
+                <li>Owning execution where roles overlap</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ivory" id="tools">
+        <div class="container section-grid">
+          <div>
+            <p class="section-label">Tools & Platforms</p>
+            <h2>Stack I work with.</h2>
+            <p class="body-copy">
+              Tools are useful only when they make execution faster and clearer. This stack supports
+              marketing, creative production, automation, and backend delivery.
+            </p>
+          </div>
+          <div class="tools-grid">
+            <span class="tool">GoHighLevel</span>
+            <span class="tool">n8n</span>
+            <span class="tool">ClickUp</span>
+            <span class="tool">Monday.com</span>
+            <span class="tool">Canva</span>
+            <span class="tool">Premiere Pro</span>
+            <span class="tool">CapCut</span>
+            <span class="tool">Meta Ads</span>
+            <span class="tool">Google Ads</span>
+            <span class="tool">JavaScript</span>
+            <span class="tool">Landing Pages</span>
+            <span class="tool">Website Development</span>
+            <span class="tool">Claude</span>
+            <span class="tool">ChatGPT</span>
+            <span class="tool">Google AI Tools</span>
+            <span class="tool">Higgsfield</span>
+            <span class="tool">NotebookLM</span>
+            <span class="tool">AI Workflow Tools</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="container">
+          <div class="work-top">
+            <div>
+              <p class="section-label">Selected Work</p>
+              <h2>Work that connects the visible front-end with the hidden operating system.</h2>
+            </div>
+            <div class="gold-card">
+              <small>Websites Created</small>
+              <div class="site-grid">
+                <span class="site">Growthifyu.com</span>
+                <span class="site">Ski-G.com</span>
+                <span class="site">Estaviodesignstudio.com</span>
+                <span class="site">Theshaktiawaken.com</span>
+              </div>
+            </div>
+          </div>
+
+          <article class="case-study-feature">
+            <div>
+              <small>Featured Case Study</small>
+              <h3>Solar Lead Qualification Funnel</h3>
+            </div>
+            <div>
+              <p>
+                SKIG Energies needed better-qualified solar enquiries, so I built a calculator-led
+                funnel that collects buying context before sending leads into Zoho Pipeline.
+              </p>
+              <div class="actions">
+                <a class="button gold" href="case-study-solar.html">Read Case Study</a>
+                <a class="button outline-light" href="https://solar.ski-g.com/" target="_blank" rel="noreferrer">Open Live Funnel</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="work-grid">
+            <article class="work-card">
+              <h3>Websites Created</h3>
+              <p>Built and developed websites as part of broader marketing, funnel, or brand execution work.</p>
+            </article>
+            <article class="work-card">
+              <h3>Funnel Systems & Landing Pages</h3>
+              <p>Built landing pages, booking flows, and backend funnel structures aligned to campaign intent and lead handling requirements.</p>
+            </article>
+            <article class="work-card">
+              <h3>Marketing Automations</h3>
+              <p>Worked with n8n and operational logic to reduce manual steps, improve lead flow, and support reporting and execution systems.</p>
+            </article>
+            <article class="work-card">
+              <h3>Performance Creative Execution</h3>
+              <p>Planned, created, and refined static and video ad creatives based on campaign needs and performance feedback.</p>
+            </article>
+            <article class="work-card">
+              <h3>Campaign Operations</h3>
+              <p>Handled reporting, client coordination, internal follow-up, and execution flow across multiple ongoing projects.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ivory" id="contact">
+        <div class="container section-grid">
+          <div>
+            <p class="section-label">Contact</p>
+            <h2>Open to execution-focused marketing, funnel, and operations roles.</h2>
+            <p class="body-copy">
+              This portfolio is built to show what I do clearly: marketing execution, systems,
+              creative production, websites, and modern AI-assisted workflows without vague positioning.
+            </p>
+            <div class="actions">
+              <a class="button dark" href="mailto:raushansingh0610@gmail.com">Get In Touch</a>
+              <a class="button outline-dark" href="#top">Back To Top</a>
+            </div>
+          </div>
+
+          <aside class="summary-card">
+            <small>Profile Summary</small>
+            <div class="profile-grid">
+              <span class="profile-item">Performance Marketing & Operations</span>
+              <span class="profile-item">Funnel Builder and Website Developer</span>
+              <span class="profile-item">Creative + Ops + Backend Execution</span>
+              <span class="profile-item">AI-assisted research, writing, automation, and production</span>
+            </div>
+            <div class="details">
+              <p>Name: Roushan</p>
+              <p>Experience: 2+ years in performance marketing and operations</p>
+              <p>Work Style: Small-team, founder-side, execution-focused</p>
+              <p>Email: raushansingh0610@gmail.com</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
