@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Bot Flow Case Study | Automated Lead Qualification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#111111',
+                        border: '#252525',
+                        accent: '#00d1c1'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #050505;
+            color: #f5f5f5;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        .case-card {
+            background: linear-gradient(145deg, rgba(17,17,17,0.98), rgba(8,8,8,0.98));
+            border: 1px solid #252525;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .flow-step {
+            background: rgba(0, 209, 193, 0.08);
+            border: 1px solid rgba(0, 209, 193, 0.22);
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky top-0 z-50 border-b border-border bg-dark/85 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+            <a href="index.html#projects" class="text-white font-bold text-lg">Roushan<span class="text-accent">.</span></a>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="index.html#projects" class="px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-gray-300 hover:text-white hover:border-gray-500 transition-colors text-center">Back to Case Studies</a>
+                <a href="index.html#contact" class="px-5 py-2.5 rounded-full bg-accent text-dark text-sm font-bold hover:bg-teal-300 transition-colors text-center">Discuss Similar System</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <section class="mb-16">
+            <span class="text-xs font-bold text-accent uppercase tracking-widest">WhatsApp Automation / Lead Qualification</span>
+            <h1 class="mt-5 max-w-5xl text-4xl md:text-6xl font-black text-white leading-tight">WhatsApp Bot Flow for Automated Lead Qualification</h1>
+            <p class="mt-6 max-w-3xl text-lg md:text-xl text-gray-400 leading-relaxed">A working WhatsApp bot flow built for a furniture company to qualify incoming enquiries, collect customer requirements, and prepare better leads for sales follow-up.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Project Type</p>
+                    <p class="text-white font-semibold">WhatsApp Automation</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Industry</p>
+                    <p class="text-white font-semibold">Furniture / Home Improvement</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Role</p>
+                    <p class="text-white font-semibold">Flow Strategy, Bot Structure & Automation Execution</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Status</p>
+                    <p class="text-white font-semibold">Live / Working Automation Flow</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl overflow-hidden mb-8">
+            <img src="assets/Whatsapp%20Flow.png" alt="WhatsApp bot flow for automated furniture lead qualification" class="w-full h-auto">
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Project Overview</h2>
+            <div class="space-y-5 text-gray-400 leading-relaxed">
+                <p>This project was built for a furniture company that needed a better way to qualify incoming WhatsApp leads before the sales team got involved.</p>
+                <p>The business was receiving enquiries, but not every lead was serious or sales-ready. Many users asked basic questions, dropped off midway, or did not provide enough information for the team to understand their requirement.</p>
+                <div class="rounded-2xl border border-accent/25 bg-accent/10 p-5 text-white font-bold text-xl">I created a WhatsApp bot flow that automatically qualifies leads based on their responses and guides them through a structured conversation.</div>
+                <p>The goal was to reduce manual qualification work and help the sales team focus only on better-quality prospects.</p>
+            </div>
+        </section>
+
+        <section class="grid lg:grid-cols-2 gap-8 mb-8">
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">The Problem</h2>
+                <div class="space-y-5 text-gray-400 leading-relaxed">
+                    <p><strong class="text-white">Too many unqualified enquiries:</strong> leads were coming in, but the team had to manually understand every requirement.</p>
+                    <p><strong class="text-white">Slow response time:</strong> manual replies caused delays when multiple enquiries arrived at the same time.</p>
+                    <p><strong class="text-white">Missing requirement details:</strong> the sales team often did not know what the customer wanted, their budget, or how serious they were.</p>
+                    <p><strong class="text-white">Manual lead filtering:</strong> the team had to spend time asking the same basic questions repeatedly.</p>
+                    <p><strong class="text-white">Lead leakage:</strong> some prospects dropped off because they did not receive quick, structured responses.</p>
+                </div>
+            </div>
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">Project Goal</h2>
+                <ul class="grid gap-3 text-gray-400">
+                    <li>&bull; Respond instantly to new enquiries</li>
+                    <li>&bull; Ask the right qualification questions</li>
+                    <li>&bull; Understand customer requirements</li>
+                    <li>&bull; Filter serious and non-serious leads</li>
+                    <li>&bull; Collect important sales information</li>
+                    <li>&bull; Reduce manual work for the team</li>
+                    <li>&bull; Move qualified leads toward the next step</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Automation Flow</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">New WhatsApp Enquiry</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Instant Bot Response</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Requirement Selection</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Budget / Product Interest Qualification</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Location / Contact Detail Collection</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Lead Categorization</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Sales Team Handoff</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Follow-Up / Next Step</div>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">What I Built</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">1. WhatsApp Bot Conversation Flow</h3>
+                    <p class="text-gray-400 leading-relaxed">I created a structured WhatsApp conversation flow that guides users step by step with clear questions instead of open-ended manual replies.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">2. Lead Qualification Logic</h3>
+                    <p class="text-gray-400 leading-relaxed">The flow qualified leads based on product interest, furniture requirement, budget range, location, timeline, contact details, and buying intent.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">3. Automated Lead Filtering</h3>
+                    <p class="text-gray-400 leading-relaxed">Qualified leads could move forward for human follow-up, while low-intent or incomplete leads could be handled differently.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">4. Sales Handoff Structure</h3>
+                    <p class="text-gray-400 leading-relaxed">The bot collected the right information before handoff, so the sales team received better context before contacting the prospect.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6 md:col-span-2">
+                    <h3 class="text-xl font-bold text-white mb-3">5. Reduced Manual Repetition</h3>
+                    <p class="text-gray-400 leading-relaxed">The team no longer had to ask the same basic questions again and again because the bot collected key information automatically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid lg:grid-cols-2 gap-8 mb-8">
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">Why This Worked Better</h2>
+                <p class="text-gray-400 leading-relaxed">A normal WhatsApp inbox creates chaos when enquiries increase. This bot flow converted WhatsApp into a structured lead qualification system.</p>
+                <p class="text-white font-semibold leading-relaxed mt-5">The system made WhatsApp work like a proper sales qualification channel instead of just a chat inbox.</p>
+            </div>
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">Outcome</h2>
+                <ul class="grid gap-3 text-gray-400">
+                    <li>&bull; Faster response to incoming WhatsApp leads</li>
+                    <li>&bull; Reduced manual lead qualification work</li>
+                    <li>&bull; Better customer requirement collection</li>
+                    <li>&bull; Clearer sales handoff</li>
+                    <li>&bull; Improved lead filtering</li>
+                    <li>&bull; Less time wasted on weak enquiries</li>
+                    <li>&bull; More organized WhatsApp lead management</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">My Role</h2>
+            <p class="text-gray-400 leading-relaxed mb-6">I handled the WhatsApp automation flow from planning to execution.</p>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-gray-400">
+                <p>&bull; Understanding the client's lead handling problem</p>
+                <p>&bull; Planning the WhatsApp qualification journey</p>
+                <p>&bull; Structuring the bot conversation flow</p>
+                <p>&bull; Defining qualification questions</p>
+                <p>&bull; Creating lead filtering logic</p>
+                <p>&bull; Building the WhatsApp bot flow</p>
+                <p>&bull; Testing the complete conversation journey</p>
+                <p>&bull; Improving the flow for better lead quality</p>
+                <p>&bull; Planning the sales handoff process</p>
+            </div>
+            <p class="mt-8 text-white font-semibold leading-relaxed">In short, I built a WhatsApp automation system that qualifies furniture leads on autopilot and helps the sales team focus on better prospects.</p>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Skills Demonstrated</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">WhatsApp Automation</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Bot Flow Strategy</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Lead Qualification</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Sales Automation</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Conversation Flow Planning</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Lead Filtering Logic</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Marketing Operations</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Funnel Problem-Solving</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Sales Handoff Planning</span>
+                <span class="px-3 py-1.5 bg-border text-gray-300 rounded-md text-sm">Automation Testing</span>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="index.html#projects" class="px-6 py-3 rounded-full bg-accent text-dark text-sm font-bold text-center hover:bg-teal-300 transition-colors">Back to Case Studies</a>
+                <a href="index.html#contact" class="px-6 py-3 rounded-full border border-border text-gray-300 text-sm font-semibold text-center hover:text-white hover:border-gray-500 transition-colors">Discuss Similar System</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

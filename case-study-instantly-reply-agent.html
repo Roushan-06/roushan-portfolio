@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instantly Reply Agent Case Study | AI Automation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#111111',
+                        border: '#252525',
+                        accent: '#00d1c1'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #050505;
+            color: #f5f5f5;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        .case-card {
+            background: linear-gradient(145deg, rgba(17,17,17,0.98), rgba(8,8,8,0.98));
+            border: 1px solid #252525;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .flow-step {
+            background: rgba(0, 209, 193, 0.08);
+            border: 1px solid rgba(0, 209, 193, 0.22);
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky top-0 z-50 border-b border-border bg-dark/85 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+            <a href="index.html#portfolio" class="text-white font-bold text-lg">Roushan<span class="text-accent">.</span></a>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="index.html#portfolio" class="px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-gray-300 hover:text-white hover:border-gray-500 transition-colors text-center">Back to Portfolio</a>
+                <a href="index.html#contact" class="px-5 py-2.5 rounded-full bg-accent text-dark text-sm font-bold hover:bg-teal-300 transition-colors text-center">Discuss Similar System</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <section class="mb-16">
+            <span class="text-xs font-bold text-accent uppercase tracking-widest">AI Automation / Lead Response System</span>
+            <h1 class="mt-5 max-w-5xl text-4xl md:text-6xl font-black text-white leading-tight">Instantly Reply Agent - AI/Automation System for Faster Lead Response</h1>
+            <p class="mt-6 max-w-3xl text-lg md:text-xl text-gray-400 leading-relaxed">A custom reply automation system that detects interested cold email replies, responds within seconds, alerts the team in Slack, and updates the lead inside the GoHighLevel pipeline.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Project Type</p>
+                    <p class="text-white font-semibold">Custom Reply Automation</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Role</p>
+                    <p class="text-white font-semibold">Strategy, Coding, Deployment & Integration</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Status</p>
+                    <p class="text-white font-semibold">Live / Working System</p>
+                </div>
+                <div class="case-card rounded-2xl p-5">
+                    <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Built With</p>
+                    <p class="text-white font-semibold">Instantly API, Vercel, Slack, GHL, Cloudflare</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl overflow-hidden mb-8">
+            <img src="assets/Instantly%20agent/Agent%20reply.png" alt="Instantly Reply Agent Slack notification and reply handling screenshot" class="w-full h-auto">
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Project Overview</h2>
+            <div class="space-y-5 text-gray-400 leading-relaxed">
+                <p>In cold email campaigns, speed matters. Interested replies were coming in, but delayed responses meant many warm leads were going cold before the team could follow up.</p>
+                <p>When a prospect shows interest, the first few minutes are critical. If the reply is delayed, the prospect may lose attention, forget the context, or move on.</p>
+                <div class="rounded-2xl border border-accent/25 bg-accent/10 p-5 text-white font-bold text-xl">I built a custom Instantly Reply Agent that detects interested replies and responds within seconds.</div>
+                <p>The system was coded and deployed from scratch, then connected with Slack notifications and GoHighLevel pipeline tracking so the team could manage follow-ups and meeting booking more clearly.</p>
+            </div>
+        </section>
+
+        <section class="grid lg:grid-cols-2 gap-8 mb-8">
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">The Problem</h2>
+                <div class="space-y-5 text-gray-400 leading-relaxed">
+                    <p><strong class="text-white">Late responses:</strong> warm replies were not always handled immediately.</p>
+                    <p><strong class="text-white">Leads going cold:</strong> interested prospects lost momentum because the first response was delayed.</p>
+                    <p><strong class="text-white">Manual tracking issues:</strong> the team had to manually check replies, update CRM stages, and track follow-ups.</p>
+                    <p><strong class="text-white">No instant alerts:</strong> the team did not always get immediate notifications when a high-intent reply came in.</p>
+                    <p><strong class="text-white">Missed meeting opportunities:</strong> slow response time affected the chance of converting interested replies into booked calls.</p>
+                </div>
+            </div>
+            <div class="case-card rounded-3xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold text-white mb-5">The Strategy</h2>
+                <p class="text-gray-400 leading-relaxed mb-5">The goal was to build a fast, lightweight, and cost-efficient reply automation system using custom code instead of an expensive third-party automation tool.</p>
+                <ul class="grid gap-3 text-gray-400">
+                    <li>• Detect interested replies from Instantly</li>
+                    <li>• Trigger an instant response</li>
+                    <li>• Notify the team in Slack</li>
+                    <li>• Push or update the lead inside GoHighLevel</li>
+                    <li>• Track lead movement through pipeline stages</li>
+                    <li>• Support faster follow-up and meeting booking</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">How the System Works</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Instantly Interested Reply</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Campaign Webhook Trigger</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Custom Reply Agent</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Instant Response Sent</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Slack Notification Sent</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Lead Created / Updated in GHL</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Pipeline Stage Tracking</div>
+                <div class="flow-step rounded-xl p-4 text-sm font-semibold text-white">Follow-Up and Booking Tracking</div>
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10 mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">What I Built</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">1. Custom Reply Agent</h3>
+                    <p class="text-gray-400 leading-relaxed">I coded the reply agent to handle interested replies from Instantly campaigns and maintain conversation momentum.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">2. Vercel Deployment</h3>
+                    <p class="text-gray-400 leading-relaxed">I hosted the agent on Vercel so the system could run reliably online without manual execution.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">3. Instantly API & Webhook Integration</h3>
+                    <p class="text-gray-400 leading-relaxed">I connected campaign webhooks and API logic so interested replies could trigger the next actions automatically.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">4. Slack Notification System</h3>
+                    <p class="text-gray-400 leading-relaxed">The team receives real-time Slack alerts when an interested lead replies.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">5. GoHighLevel Pipeline Tracking</h3>
+                    <p class="text-gray-400 leading-relaxed">Interested replies, follow-up status, lead movement, meeting booking, and sales visibility are tracked inside GHL.</p>
+                </div>
+                <div class="border border-border rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-3">6. Cloudflare Worker Proxy</h3>
+                    <p class="text-gray-400 leading-relaxed">I used a Cloudflare Worker proxy layer to solve direct GHL API connection issues and make communication more reliable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="case-card rounded-2xl overflow-hidden">
+                <img src="assets/Instantly%20agent/GHL%20Agent%20-%20Pipeline.png" alt="GoHighLevel pipeline tracking screenshot" class="w-full h-full object-cover">
+            </div>
+            <div class="case-card rounded-2xl overflow-hidden">
+                <img src="assets/Instantly%20agent/Vercel%20agent%20hosting.png" alt="Vercel hosting screenshot for the reply agent" class="w-full h-full object-cover">
+            </div>
+            <div class="case-card rounded-2xl overflow-hidden">
+                <img src="assets/Instantly%20agent/Vercel%20agent%20hosting%202.png" alt="Vercel deployment details screenshot" class="w-full h-full object-cover">
+            </div>
+            <div class="case-card rounded-2xl overflow-hidden">
+                <img src="assets/Instantly%20agent/GHL%20Proxy%20Clouffare.png" alt="Cloudflare worker proxy screenshot for GHL API communication" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-bold text-white mb-5">Result</h2>
+            <ul class="grid gap-3 text-gray-400">
+                <li>• Faster response to interested leads</li>
+                <li>• Reduced lead drop-off due to delayed replies</li>
+                <li>• Improved lead tracking inside GHL pipeline</li>
+                <li>• Real-time Slack alerts for the team</li>
+                <li>• Cleaner follow-up and meeting booking workflow</li>
+                <li>• Reduced manual work for reply handling and CRM updates</li>
+                <li>• Helped increase the meeting booking rate to around 50%</li>
+            </ul>
+        </section>
+
+        <section class="case-card rounded-3xl p-6 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">My Role</h2>
+            <p class="text-gray-400 leading-relaxed mb-6">I owned the complete project from planning to execution.</p>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-gray-400">
+                <p>• Identifying the response-delay problem</p>
+                <p>• Planning the full automation flow</p>
+                <p>• Coding the reply agent</p>
+                <p>• Setting up the Instantly webhook trigger</p>
+                <p>• Connecting Instantly API logic</p>
+                <p>• Deploying the system on Vercel</p>
+                <p>• Managing the GitHub codebase</p>
+                <p>• Connecting Slack webhook notifications</p>
+                <p>• Integrating GoHighLevel pipeline tracking</p>
+                <p>• Solving GHL API issues using a Cloudflare Worker proxy</p>
+                <p>• Testing the complete flow from reply detection to CRM update</p>
+                <p>• Improving the system based on real campaign behavior</p>
+            </div>
+            <p class="mt-8 text-white font-semibold leading-relaxed">In short, I built the complete system: strategy, code, deployment, API integrations, Slack alerts, GHL tracking, and pipeline automation.</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="index.html#portfolio" class="px-6 py-3 rounded-full bg-accent text-dark text-sm font-bold text-center hover:bg-teal-300 transition-colors">Back to Portfolio</a>
+                <a href="index.html#contact" class="px-6 py-3 rounded-full border border-border text-gray-300 text-sm font-semibold text-center hover:text-white hover:border-gray-500 transition-colors">Discuss Similar System</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
