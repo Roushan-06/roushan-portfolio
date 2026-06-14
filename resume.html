@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roushan Kumar Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        card: '#111111',
+                        border: '#252525',
+                        accent: '#00d1c1'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white">
+    <main class="min-h-screen flex flex-col">
+        <header class="border-b border-border bg-dark/90 backdrop-blur-xl">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-white font-bold text-lg">Roushan Kumar</p>
+                    <p class="text-sm text-gray-400">Marketing Operations & Funnel Automation Specialist</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="assets/Roushan_Kumar_Resume.pdf" download class="px-5 py-2.5 rounded-full bg-accent text-dark text-sm font-bold hover:bg-teal-300 transition-colors text-center">Download PDF</a>
+                    <a href="index.html#contact" class="px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-gray-300 hover:text-white hover:border-gray-500 transition-colors text-center">Back to Portfolio</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="flex-1 p-4 md:p-6">
+            <div class="max-w-6xl mx-auto h-[calc(100vh-132px)] bg-card border border-border rounded-2xl overflow-hidden">
+                <iframe
+                    src="assets/Roushan_Kumar_Resume.pdf"
+                    title="Roushan Kumar Resume PDF"
+                    class="w-full h-full"
+                ></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
